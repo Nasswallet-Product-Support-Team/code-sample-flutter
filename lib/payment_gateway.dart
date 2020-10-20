@@ -5,11 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:webview_flutter/webview_flutter.dart';
 
-String username = "7575401501";
-String password = "pG7*NJLO";
+//please fill the following with your test merchant account
+
+String username = "";
+String password = "";
 String grantType = "password";
-String orderId = "263626";
-String transactionPin = "699746";
+String orderId = "522264";
+String transactionPin = "";
 String amount = "10";
 String languageCode = "en";
 String basicToken = "Basic TUVSQ0hBTlRfQVBQOk1lcmNoYW50QEFkbWluIzEyMw==";
