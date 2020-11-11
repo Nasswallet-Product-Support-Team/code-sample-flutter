@@ -1,4 +1,4 @@
-# flutter_test_api
+# Sample Code using Flutter 
 
 This project is a sample code to demonstrate how to use Nasswallet Payment Gateway API for test purposes.
 
