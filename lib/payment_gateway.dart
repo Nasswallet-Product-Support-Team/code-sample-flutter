@@ -7,11 +7,11 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 //please fill the following with your test merchant account
 
-String username = "7500077974";
-String password = "Nass@2020";
+String username = "";
+String password = "";
 String grantType = "password";
-String orderId = "ord_156";
-String transactionPin = "135758";
+String orderId = "";
+String transactionPin = "";
 String amount = "10";
 String languageCode = "en";
 String basicToken = "Basic TUVSQ0hBTlRfUEFZTUVOVF9HQVRFV0FZOk1lcmNoYW50R2F0ZXdheUBBZG1pbiMxMjM=";
@@ -96,6 +96,7 @@ class _PaymentGatewayState extends State<PaymentGateway> {
           future: apiResponse,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
+              print(snapshot.data);
               String transactionId = snapshot.data['data']['transactionId'];
               String token = snapshot.data['data']['token'];
               String url =
