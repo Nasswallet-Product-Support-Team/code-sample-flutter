@@ -7,18 +7,18 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 //please fill the following with your test merchant account
 
-String username = "";
-String password = "";
+String username = "7500077974";
+String password = "Nass@2020";
 String grantType = "password";
-String orderId = "522264";
-String transactionPin = "";
+String orderId = "ord_156";
+String transactionPin = "135758";
 String amount = "10";
 String languageCode = "en";
-String basicToken = "Basic TUVSQ0hBTlRfQVBQOk1lcmNoYW50QEFkbWluIzEyMw==";
+String basicToken = "Basic TUVSQ0hBTlRfUEFZTUVOVF9HQVRFV0FZOk1lcmNoYW50R2F0ZXdheUBBZG1pbiMxMjM=";
 
 Future<Map<String, dynamic>> fetchData() async {
   http.Response response = await http.post(
-      "https://uatgw.nasswallet.com/payment/transaction/login",
+      "https://uatgw1.nasswallet.com/payment/transaction/login",
       headers: <String, String>{
         "authorization": basicToken,
         "Content-Type": "application/json"
@@ -36,7 +36,7 @@ Future<Map<String, dynamic>> fetchData() async {
     if(responseJson['responseCode'] == 0) {
       String accessToken = responseJson['data']['access_token'];
       http.Response initResponse = await http.post(
-          "https://uatgw.nasswallet.com/payment/transaction/initTransaction",
+          "https://uatgw1.nasswallet.com/payment/transaction/initTransaction",
           headers: <String, String>{
             "authorization": "Bearer $accessToken",
             "Content-Type": "application/json"
@@ -99,7 +99,7 @@ class _PaymentGatewayState extends State<PaymentGateway> {
               String transactionId = snapshot.data['data']['transactionId'];
               String token = snapshot.data['data']['token'];
               String url =
-                  "https://uatcheckout.nasswallet.com/payment-gateway?id=$transactionId&token=$token&userIdentifier=$username";
+                  "https://uatcheckout1.nasswallet.com/payment-gateway?id=$transactionId&token=$token&userIdentifier=$username";
               print(url);
               return WebView(
                 initialUrl: url,
